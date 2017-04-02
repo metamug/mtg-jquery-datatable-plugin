@@ -1,6 +1,6 @@
 
 (function ( $ ) {
-	$.fn.getMtgDataTable = function(tableId, url){
+	$.fn.mtgDataTable = function(tableId, url){
 		var xhr = new XMLHttpRequest();
 		xhr.open('GET', url, true);
 
