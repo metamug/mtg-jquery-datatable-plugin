@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Resource xmlns="http://xml.metamug.net/resource/1.0" v="1.0">
+  
+	<Request method="GET">
+		<Desc> Get employee data </Desc>
+		<Query> SELECT name, position, office, age, salary FROM employees </Query>
+	</Request>
+  
+</Resource>
