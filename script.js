@@ -1,5 +1,6 @@
 $(document).ready(function(){
-
-	$(this).mtgDataTable('#datatable', 'https://api.metamug.com/dtable/v1.0/employee');
+	var url = 'https://api.metamug.com/dtable/v1.0/employee';
+	var columns = ['name', 'position', 'office', 'salary', 'age'];
+	$('#datatable').mtgDataTable(url, columns);
 	
 });
