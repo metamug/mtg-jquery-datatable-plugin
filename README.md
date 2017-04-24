@@ -4,3 +4,4 @@ This plugin can be directly used to render the JSON response received from a Met
 ```javascript
 $('#datatable').mtgDataTable(apiUrl, colNames);
 ```
+This plugin requires both JQuery and [JQuery Datatable Plugin](https://datatables.net/examples/advanced_init/html5-data-options.html). The [Metamug](https://metamug.com) API provides data for the example to work
