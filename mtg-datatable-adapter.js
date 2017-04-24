@@ -1,26 +1,21 @@
+$.fn.mtgDataTable = function(url, columns){
+	var that = this;
+	$.ajax({
+        "url": url,
+        "success": function (json) {
+            var dataset = [];	
+			json.forEach(function(obj) {
+				var arr = [];
+				columns.forEach(function(colName) {
+					arr.push(obj[colName]);
+				});
+				dataset.push(arr);
+			});
 
-(function ( $ ) {
-	$.fn.mtgDataTable = function(tableId, url){
-		var xhr = new XMLHttpRequest();
-		xhr.open('GET', url, true);
-
-		xhr.onload = function () {
-        	var dataset = [];
-        	var list = JSON.parse(xhr.responseText);
-        		
-        	$.each(list, function(index, obj) {
-        		var arr = [];
-        		$.each(obj, function(key, val) {
-	       			arr.push(val);
-        		});
-        		dataset.push(arr);
-        	});
-
-        	$(tableId).dataTable( {
-		        "aaData": dataset						
-		    });
-		}
-
-		xhr.send();	      
-	}
-}( jQuery ));
+			that.dataTable( {
+			    "aaData": dataset						
+			});
+        },
+        "dataType": "json"
+    });    
+}
